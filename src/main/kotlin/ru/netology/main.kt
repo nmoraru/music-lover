@@ -15,7 +15,7 @@ fun main() {
     val minAmountForTopSale = 10000_01
 
     val amountAfterBaseSale = if (oldAmount >= minAmountForStandardSale && oldAmount <= maxAmountForStandardSale) amount - standardSale else if (oldAmount >= minAmountForTopSale) amount * (1 - topSale) else amount
-    val amountAfterRegularCustomerSale = if (regularCustomer === true) amountAfterBaseSale.toDouble() * (1 - regularCustomerSale) else amountAfterBaseSale
+    val amountAfterRegularCustomerSale = if (regularCustomer) amountAfterBaseSale.toDouble() * (1 - regularCustomerSale) else amountAfterBaseSale
 
     println(amountAfterRegularCustomerSale.toInt())
 }
